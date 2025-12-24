@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница с содержанием - Рябинина</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для страницы с содержанием */
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content-menu {
+            background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #E0AAFF;
+            margin-bottom: 30px;
+        }
+        
+        .main-menu-item {
+            margin-bottom: 15px;
+        }
+        
+        .menu-title {
+            display: block;
+            padding: 15px 20px;
+            background: #6A0DAD;
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .menu-title:hover {
+            background: #5A0C9D;
+            transform: translateX(5px);
+        }
+        
+        .sub-menu {
+            list-style: none;
+            padding-left: 20px;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .sub-menu.active {
+            display: block;
+        }
+        
+        .sub-menu li {
+            margin-bottom: 8px;
+        }
+        
+        .sub-menu a {
+            display: block;
+            padding: 12px 15px;
+            background: white;
+            color: #6A0DAD;
+            text-decoration: none;
+            border-radius: 6px;
+            border: 2px solid #E0AAFF;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .sub-menu a:hover {
+            background: #9D4EDD;
+            color: white;
+            transform: translateX(10px);
+            border-color: #9D4EDD;
+        }
+        
+        .page-description {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #9D4EDD;
+            margin-top: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .page-description h3 {
+            color: #6A0DAD;
+            margin-bottom: 15px;
+        }
+        
+        .description-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .description-list li {
+            padding: 10px 10px 10px 30px;
+            margin-bottom: 10px;
+            background: #F8F4FF;
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .description-list li::before {
+            content: ">";
+            position: absolute;
+            left: 10px;
+            color: #9D4EDD;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Страница с содержанием</h1>
+            <p class="subtitle">Навигация по всем страницам сайта</p>
+        </header>
+
+        <div class="main-layout">
+            <nav class="sidebar">
+                <h3>Навигация</h3>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Первая страница</a></li>
+                    <li><a href="2.html">Вторая страница</a></li>
+                    <li><a href="3.html">Страница с формой</a></li>
+                    <li><a href="5.html">Страница со слайдером</a></li>
+                </ul>
+            </nav>
+
+            <main class="content">
+                <section class="welcome-section">
+                    <h2>Содержание сайта </h2>
+                    <p>На этой странице вы можете перейти на любую страницу сайта через удобное меню.</p>
+                </section>
+
+                <div class="content-section">
+                    <div class="content-menu">
+                        <div class="main-menu-item">
+                            <button class="menu-title" onclick="toggleMenu()">
+                                Содержание сайта (нажмите, чтобы раскрыть)
+                            </button>
+                            <ul class="sub-menu" id="siteMenu">
+                                <li><a href="index.html">Главная страница</a></li>
+                                <li><a href="2.html">Вторая страница</a></li>
+                                <li><a href="3.html">Страница с формой</a></li>
+                                <li><a href="5.html">Страница со слайдером</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="page-description">
+                        <h3>Описание страниц сайта:</h3>
+                        <ul class="description-list">
+                            <li><strong>Главная страница</strong> - первая страница сайта с приветствием и основной информацией</li>
+                            <li><strong>Вторая страница</strong> - содержит таблицу с данными и контактную информацию</li>
+                            <li><strong>Страница с формой</strong> - форма для обратной связи и записи</li>
+                            <li><strong>Страница со слайдером</strong> - галерея изображений с возможностью прокрутки</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="page-description" style="margin-top: 20px;">
+                        <h3>Как пользоваться меню:</h3>
+                        <p>1. Нажмите на кнопку "Содержание сайта" выше, чтобы раскрыть меню</p>
+                        <p>2. Выберите нужную страницу из списка</p>
+                        <p>3. Для быстрой навигации также используйте боковое меню слева</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024-2025 Рябинина. Страница с содержанием</p>
+            <p></p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('siteMenu');
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            } else {
+                menu.classList.add('active');
+            }
+        }
+        
+        // Автоматически открываем меню при загрузке страницы
+        window.onload = function() {
+            document.getElementById('siteMenu').classList.add('active');
+        }
+    </script>
+</body>
+</html>

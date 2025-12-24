@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница с формой - Рябинина</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы с формой */
+        .form-section {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form {
+            background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #E0AAFF;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-field {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 2px solid #E0AAFF;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            color: #333;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-field:focus {
+            outline: none;
+            border-color: #9D4EDD;
+            box-shadow: 0 0 0 3px rgba(157, 78, 221, 0.2);
+        }
+        
+        .form-field::placeholder {
+            color: #999;
+        }
+        
+        .form-button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #6A0DAD, #9D4EDD);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .form-button:hover {
+            background: linear-gradient(135deg, #5A0C9D, #8A3ECD);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 13, 173, 0.3);
+        }
+        
+        .form-button:active {
+            transform: translateY(0);
+        }
+        
+        .form-note {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #9D4EDD;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .form-title {
+            text-align: center;
+            color: #6A0DAD;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        
+        .form-description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Страница с формой</h1>
+            <p class="subtitle">Заполните данные для записи</p>
+        </header>
+
+        <div class="main-layout">
+            <nav class="sidebar">
+                <h3>Навигация</h3>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Первая страница</a></li>
+                    <li><a href="2.html">Вторая страница</a></li>
+                    <li><a href="4.html">Страница с содержанием</a></li>
+                    <li><a href="5.html">Страница со слайдером</a></li>
+                </ul>
+            </nav>
+
+            <main class="content">
+                <section class="welcome-section">
+                    <h2>Форма для записи </h2>
+                    <p>Заполните все поля формы, чтобы мы могли с вами связаться.</p>
+                </section>
+
+                <div class="form-section">
+                    <h3 class="form-title">Заполните форму</h3>
+                    <p class="form-description">Пожалуйста, введите ваши данные в поля ниже</p>
+                    
+                    <form class="form">
+                        <input class="form-field" name="name" type="text" placeholder="Имя" required>
+                        <input class="form-field" name="surname" type="text" placeholder="Фамилия" required>
+                        <input class="form-field" name="phone" type="tel" placeholder="Телефон" required>
+                        <input class="form-field" name="email" type="email" placeholder="E-mail" required>
+                        <button class="form-button" type="submit">Записаться</button>
+                    </form>
+                    
+                    <div class="form-note">
+                        <p><strong>Важно:</strong> Все поля обязательны для заполнения. После отправки формы с вами свяжутся в течение 24 часов для подтверждения записи.</p>
+                    </div>
+                </div>
+                
+                <section class="info-section" style="margin-top: 40px; padding: 20px; background: #F8F4FF; border-radius: 10px;">
+                    <h3 style="color: #6A0DAD; margin-bottom: 15px;">Что происходит после отправки формы?</h3>
+                    <ol style="list-style-type: none; padding-left: 0;">
+                        <li style="padding: 10px 10px 10px 30px; margin-bottom: 10px; background: white; border-radius: 5px; border-left: 4px solid #9D4EDD; position: relative;">
+                            <span style="position: absolute; left: 10px; color: #9D4EDD; font-weight: bold;">1.</span> Вы получаете автоматическое подтверждение на email
+                        </li>
+                        <li style="padding: 10px 10px 10px 30px; margin-bottom: 10px; background: white; border-radius: 5px; border-left: 4px solid #9D4EDD; position: relative;">
+                            <span style="position: absolute; left: 10px; color: #9D4EDD; font-weight: bold;">2.</span> Наш менеджер связывается с вами для уточнения деталей
+                        </li>
+                        <li style="padding: 10px 10px 10px 30px; margin-bottom: 10px; background: white; border-radius: 5px; border-left: 4px solid #9D4EDD; position: relative;">
+                            <span style="position: absolute; left: 10px; color: #9D4EDD; font-weight: bold;">3.</span> Вы получаете окончательное подтверждение записи
+                        </li>
+                    </ol>
+                </section>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024-2025 Рябинина. Страница с формой</p>
+            <p>Форма для обратной связи</p>
+        </footer>
+    </div>
+</body>
+</html>

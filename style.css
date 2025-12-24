@@ -1,0 +1,410 @@
+/* Фиолетовая цветовая палитра */
+:root {
+    --purple-dark: #4A0072;
+    --purple-medium: #6A0DAD;
+    --purple-light: #9D4EDD;
+    --purple-very-light: #E0AAFF;
+    --purple-bg: #F5F0FF;
+    --white: #FFFFFF;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--purple-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+    overflow: hidden;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    color: var(--white);
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path fill="white" d="M50,0 L100,50 L50,100 L0,50 Z"/></svg>');
+    background-size: 50px;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* Основной макет */
+.main-layout {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Боковая панель */
+.sidebar {
+    width: 280px;
+    background: linear-gradient(180deg, #F8F4FF, #F0E6FF);
+    padding: 30px 20px;
+    border-right: 3px solid var(--purple-very-light);
+}
+
+.sidebar h3 {
+    color: var(--purple-medium);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--purple-very-light);
+    font-size: 1.4rem;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 15px;
+}
+
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--white);
+    color: var(--purple-medium);
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid var(--purple-very-light);
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.nav-menu a:hover {
+    background: var(--purple-light);
+    color: var(--white);
+    transform: translateX(10px);
+    border-color: var(--purple-light);
+    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Основной контент */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.welcome-section {
+    margin-bottom: 40px;
+}
+
+.welcome-section h2 {
+    color: var(--purple-medium);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+}
+
+/* Стилизованный список */
+.list-section {
+    margin-bottom: 40px;
+}
+
+.list-section h3 {
+    color: var(--purple-medium);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.styled-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.styled-list li {
+    background: linear-gradient(90deg, #F8F4FF, #FFFFFF);
+    padding: 15px 20px 15px 50px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border-left: 5px solid var(--purple-light);
+    transition: transform 0.3s ease;
+    counter-increment: item;
+    position: relative;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    color: var(--purple-dark);
+}
+
+.styled-list li:hover {
+    transform: translateX(10px);
+    background: linear-gradient(90deg, #F0E6FF, #FFFFFF);
+    color: var(--purple-dark);
+}
+
+.styled-list li::before {
+    content: counter(item) ".";
+    color: var(--purple-dark);
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    font-size: 1.1rem;
+}
+
+/* Контейнер для изображения */
+.image-box {
+    background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--purple-very-light);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.fox-image, .cat-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(106, 13, 173, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.fox-image:hover, .cat-image:hover {
+    transform: scale(1.03);
+}
+
+.image-caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--purple-medium);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Футер */
+.footer {
+    background: linear-gradient(135deg, var(--purple-dark), var(--purple-medium));
+    color: var(--white);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.footer p:first-child {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Стили для второй страницы */
+
+/* Контейнер для таблицы */
+.table-container {
+    background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--purple-very-light);
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+/* Стилизованная таблица */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.styled-table th {
+    background: linear-gradient(135deg, var(--purple-medium), var(--purple-light));
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 3px solid var(--purple-dark);
+}
+
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--purple-very-light);
+    background-color: white;
+    color: var(--text-dark);
+    transition: background-color 0.3s ease;
+}
+
+.styled-table tr:hover td {
+    background-color: #f9f5ff;
+}
+
+.styled-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Колонки для контента */
+.content-columns {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.content-columns > section {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Секция контактов */
+.contacts-section {
+    background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid var(--purple-very-light);
+}
+
+.contacts-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border-left: 4px solid var(--purple-light);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-link {
+    color: var(--purple-medium);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--purple-dark);
+    text-decoration: underline;
+}
+
+.contact-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.contact-note {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px dashed var(--purple-light);
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 3px solid var(--purple-very-light);
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .welcome-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .content-columns {
+        flex-direction: column;
+    }
+    
+    .content-columns > section {
+        width: 100%;
+    }
+    
+    .table-container {
+        padding: 15px;
+        overflow-x: auto;
+    }
+    
+    .styled-table {
+        min-width: 600px;
+    }
+}

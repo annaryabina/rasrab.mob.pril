@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="windows-1251">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница со слайдером - Рябинина</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Стили для страницы со слайдером */
+        .slider-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .slider {
+            background: linear-gradient(135deg, #4A0072, #6A0DAD);
+            margin: 20px 0;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);
+            transition: 0.5s;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider:hover {
+            box-shadow: 0 15px 35px rgba(106, 13, 173, 0.4);
+            transition: 0.5s;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 400px;
+            color: white;
+            display: none;
+        }
+
+        .item.active {
+            display: flex;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        .item_col {
+            flex: 1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .item_col h5 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .item_col h6 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #E0AAFF;
+            font-style: italic;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #9D4EDD, #C77DFF);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #8A3ECD, #B56EF0);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .slider .item img {
+            object-fit: cover;
+            width: 50%;
+            height: 350px;
+            border-radius: 10px;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .previous, .next {
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: 0.5s;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .previous:hover, .next:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .dots-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #E0AAFF;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active, .dot:hover {
+            background-color: #9D4EDD;
+        }
+
+        .slider-info {
+            background: linear-gradient(135deg, #F8F4FF, #F0E6FF);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 2px solid #E0AAFF;
+        }
+
+        .slider-info h3 {
+            color: #6A0DAD;
+            margin-bottom: 15px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .item {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            .slider {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .slider .item img {
+                width: 100%;
+                height: 250px;
+                margin-top: 20px;
+            }
+
+            .previous, .next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2rem;
+                background: rgba(106, 13, 173, 0.7);
+            }
+
+            .previous {
+                left: 10px;
+            }
+
+            .next {
+                right: 10px;
+            }
+
+            .item_col {
+                padding: 15px;
+            }
+
+            .item_col h5 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Страница со слайдером</h1>
+            <p class="subtitle">Галерея изображений</p>
+        </header>
+
+        <div class="main-layout">
+            <nav class="sidebar">
+                <h3>Навигация</h3>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Первая страница</a></li>
+                    <li><a href="2.html">Вторая страница</a></li>
+                    <li><a href="3.html">Страница с формой</a></li>
+                    <li><a href="4.html">Страница с содержанием</a></li>
+                </ul>
+            </nav>
+
+            <main class="content">
+                <section class="welcome-section">
+                    <h2>Галерея изображений </h2>
+                    <p>Просматривайте изображения с помощью интерактивного слайдера.</p>
+                </section>
+
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="item active">
+                            <a class="previous" onclick="previousSlide()">&#10094;</a>
+                            <div class="item_col">
+                               <h5>Кошка с красивыми глазами</h5>
+                               <h6>Милая и очаровательная</h6> 
+                               <button class="btn" onclick="alert('Вы нажали на кнопку первой кошки!')">Кнопка первой кошки</button>
+                            </div>           
+                            <img src="cat1.jpg" alt="Кошка с красивыми глазами">
+                            <a class="next" onclick="nextSlide()">&#10095;</a>
+                        </div>
+
+                        <div class="item">
+                            <a class="previous" onclick="previousSlide()">&#10094;</a>
+                            <div class="item_col">
+                               <h5>Кошка с красивым носом</h5>
+                               <h6>Элегантная и грациозная</h6> 
+                               <button class="btn" onclick="alert('Вы нажали на кнопку второй кошки!')">Кнопка второй кошки</button>
+                            </div>           
+                            <img src="cat2.jpg" alt="Кошка с красивым носом">
+                            <a class="next" onclick="nextSlide()">&#10095;</a>
+                        </div>
+
+                        <div class="item">
+                            <a class="previous" onclick="previousSlide()">&#10094;</a>
+                            <div class="item_col">
+                               <h5>Много кошек</h5>
+                               <h6>Целая компания пушистых друзей</h6> 
+                               <button class="btn" onclick="alert('Вы нажали на кнопку кошек!')">Кнопка кошек</button>
+                            </div>           
+                            <img src="cat3.jpg" alt="Много кошек">
+                            <a class="next" onclick="nextSlide()">&#10095;</a>
+                        </div>
+                        
+                        <div class="item">
+                            <a class="previous" onclick="previousSlide()">&#10094;</a>
+                            <div class="item_col">
+                               <h5>Собака</h5>
+                               <h6>Верный и преданный друг</h6> 
+                               <button class="btn" onclick="alert('Вы нажали на кнопку собаки!')">Кнопка собаки</button>
+                            </div>           
+                            <img src="dog.jpg" alt="Собака">
+                            <a class="next" onclick="nextSlide()">&#10095;</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dots-container">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <span class="dot" onclick="currentSlide(4)"></span>
+                    </div>
+                    
+                    <div class="slider-info">
+                        <h3>Как пользоваться слайдером:</h3>
+                        <p>1. Используйте стрелки < > для переключения между слайдами</p>
+                        <p>2. Нажимайте на точки внизу для быстрого перехода к нужному слайду</p>
+                        <p>3. На мобильных устройствах слайдер адаптируется под экран</p>
+                        <p>4. Нажимайте на кнопки под каждым изображением для интерактива</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024-2025 Рябинина. Страница со слайдером</p>
+            <p></p>
+        </footer>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function nextSlide() {
+            showSlides(slideIndex += 1);
+        }
+
+        function previousSlide() {
+            showSlides(slideIndex -= 1);  
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("item");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+  
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove("active");
+            }
+            
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slides[slideIndex - 1].style.display = "flex";
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+        }
+        
+        // Автопереключение слайдов каждые 5 секунд
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+    </script>
+</body>
+</html>
